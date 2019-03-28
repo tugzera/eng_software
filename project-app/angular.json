@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "photo-system": {
+    "project-app": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/photo-system",
+            "outputPath": "dist/project-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,7 +23,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "/home/tugzera/Faculdade/2019-01/Engenharia de Software/eng_software/project-app/node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -58,18 +59,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "photo-system:build"
+            "browserTarget": "project-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "photo-system:build:production"
+              "browserTarget": "project-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "photo-system:build"
+            "browserTarget": "project-app:build"
           }
         },
         "test": {
@@ -80,8 +81,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css",
-              "/home/tugzera/Faculdade/2019-01/Engenharia de Software/eng_software/photo-system/node_modules/bootstrap/dist/css/bootstrap.css"
+              "src/styles.css"
             ],
             "scripts": [],
             "assets": [
@@ -104,7 +104,7 @@
         }
       }
     },
-    "photo-system-e2e": {
+    "project-app-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -113,11 +113,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "photo-system:serve"
+            "devServerTarget": "project-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "photo-system:serve:production"
+              "devServerTarget": "project-app:serve:production"
             }
           }
         },
@@ -133,5 +133,5 @@
       }
     }
   },
-  "defaultProject": "photo-system"
+  "defaultProject": "project-app"
 }
