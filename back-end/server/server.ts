@@ -13,7 +13,7 @@ export class Server {
 
     initializeDb(): any {
         (<any>mongoose).Promise = global.Promise;
-        return mongoose.connect('mongodb://localhost/db');
+        return mongoose.connect('mongodb://localhost/photodb');
     }
 
     initializeRoutes(routers:Routes[]):Promise<any>{
