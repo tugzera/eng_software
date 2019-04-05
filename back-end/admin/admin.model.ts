@@ -16,11 +16,11 @@ const adminSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true,
-        select: false
     },
     password: {
         type: String,
-        required: true
+        required: true,
+        select: false
     }
 })
 

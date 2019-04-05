@@ -12,7 +12,7 @@ class adminRoutes extends Routes {
         })
 
         application.post('/admin', (req, resp, next) => {
-            let admin = new Admin();
+            let admin = new Admin(req.body);
 
             admin.save().then(admin => {
                 resp.json(admin);

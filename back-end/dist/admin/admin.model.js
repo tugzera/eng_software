@@ -13,11 +13,11 @@ var adminSchema = new mongoose_1.default.Schema({
         type: String,
         required: true,
         unique: true,
-        select: false
     },
     password: {
         type: String,
-        required: true
+        required: true,
+        select: false
     }
 });
 exports.Admin = mongoose_1.default.model('Admin', adminSchema);

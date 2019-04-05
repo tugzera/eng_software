@@ -28,7 +28,7 @@ var adminRoutes = /** @class */ (function (_super) {
             });
         });
         application.post('/admin', function (req, resp, next) {
-            var admin = new admin_model_1.Admin();
+            var admin = new admin_model_1.Admin(req.body);
             admin.save().then(function (admin) {
                 resp.json(admin);
             }, function (error) {
