@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 import { Endereco } from './../endereco/endereco.model';
 
 export interface Cliente extends mongoose.Document {
@@ -7,7 +7,7 @@ export interface Cliente extends mongoose.Document {
     email: String;
     password: String;
     telefone: String;
-    end: Endereco;
+    end: Schema.Types.ObjectId;
 
 }
 
@@ -33,6 +33,10 @@ const clienteSchema = new mongoose.Schema({
     },
     telefone: {
         type: String,
+        required: true
+    },
+    end: {
+        type: Schema.Types.ObjectId,
         required: true
     }
 })
