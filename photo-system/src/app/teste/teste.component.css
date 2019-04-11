@@ -16,7 +16,9 @@ p {
     color: #999;
 }
 
-a, a:hover, a:focus {
+a,
+a:hover,
+a:focus {
     color: inherit;
     text-decoration: none;
     transition: all 0.3s;
@@ -44,7 +46,8 @@ a, a:hover, a:focus {
     margin: 40px 0;
 }
 
-i, span {
+i,
+span {
     display: inline-block;
 }
 
@@ -60,7 +63,7 @@ i, span {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: black;
+    background: #7386D5;
     color: #fff;
     transition: all 0.3s;
 }
@@ -71,7 +74,8 @@ i, span {
     text-align: center;
 }
 
-#sidebar.active .sidebar-header h3, #sidebar.active .CTAs {
+#sidebar.active .sidebar-header h3,
+#sidebar.active .CTAs {
     display: none;
 }
 
@@ -111,7 +115,7 @@ i, span {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: black;
+    background: #6d7fcc;
 }
 
 #sidebar .sidebar-header strong {
@@ -121,7 +125,7 @@ i, span {
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #47748b;
 }
 
 #sidebar ul li a {
@@ -131,7 +135,7 @@ i, span {
 }
 
 #sidebar ul li a:hover {
-    color: black;
+    color: #7386D5;
     background: #fff;
 }
 
@@ -139,9 +143,10 @@ i, span {
     margin-right: 10px;
 }
 
-#sidebar ul li.active>a, a[aria-expanded="true"] {
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
     color: #fff;
-    background: black;
+    background: #6d7fcc;
 }
 
 a[data-toggle="collapse"] {
@@ -159,7 +164,7 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: black;
+    background: #6d7fcc;
 }
 
 ul.CTAs {
@@ -176,21 +181,13 @@ ul.CTAs a {
 
 a.download {
     background: #fff;
-    color: black;
+    color: #7386D5;
 }
 
-a.article, a.article:hover {
-    background: black!important;
+a.article,
+a.article:hover {
+    background: #6d7fcc !important;
     color: #fff !important;
-}
-
-.black {
-    background: black!important;
-    color: white;
-}
-
-.btn:focus {
-    outline: none;
 }
 
 /* ---------------------------------------------------
@@ -226,7 +223,8 @@ a.article, a.article:hover {
     #sidebar.active {
         margin-left: 0 !important;
     }
-    #sidebar .sidebar-header h3, #sidebar .CTAs {
+    #sidebar .sidebar-header h3,
+    #sidebar .CTAs {
         display: none;
     }
     #sidebar .sidebar-header strong {

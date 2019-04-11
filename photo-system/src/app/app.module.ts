@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { FooterBarComponent } from './footer-bar/footer-bar.component';
+import { TesteComponent } from './teste/teste.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     LoginPageComponent,
-    FooterBarComponent
+    FooterBarComponent,
+    TesteComponent
   ],
   imports: [
     BrowserModule,
