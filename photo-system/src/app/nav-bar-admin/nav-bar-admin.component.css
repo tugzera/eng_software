@@ -16,9 +16,7 @@ p {
     color: #999;
 }
 
-a,
-a:hover,
-a:focus {
+a, a:hover, a:focus {
     color: inherit;
     text-decoration: none;
     transition: all 0.3s;
@@ -46,8 +44,7 @@ a:focus {
     margin: 40px 0;
 }
 
-i,
-span {
+i, span {
     display: inline-block;
 }
 
@@ -74,8 +71,7 @@ span {
     text-align: center;
 }
 
-#sidebar.active .sidebar-header h3,
-#sidebar.active .CTAs {
+#sidebar.active .sidebar-header h3, #sidebar.active .CTAs {
     display: none;
 }
 
@@ -143,8 +139,7 @@ span {
     margin-right: 10px;
 }
 
-#sidebar ul li.active>a,
-a[aria-expanded="true"] {
+#sidebar ul li.active>a, a[aria-expanded="true"] {
     color: #fff;
     background: black;
 }
@@ -184,9 +179,8 @@ a.download {
     color: black;
 }
 
-a.article,
-a.article:hover {
-    background: black !important;
+a.article, a.article:hover {
+    background: black!important;
     color: #fff !important;
 }
 
@@ -195,6 +189,9 @@ a.article:hover {
     color: white;
 }
 
+.btn:focus {
+    outline: none;
+}
 
 /* ---------------------------------------------------
     CONTENT STYLE
@@ -229,8 +226,7 @@ a.article:hover {
     #sidebar.active {
         margin-left: 0 !important;
     }
-    #sidebar .sidebar-header h3,
-    #sidebar .CTAs {
+    #sidebar .sidebar-header h3, #sidebar .CTAs {
         display: none;
     }
     #sidebar .sidebar-header strong {

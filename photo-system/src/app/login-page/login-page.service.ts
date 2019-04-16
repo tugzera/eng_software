@@ -1,8 +1,8 @@
-import { Login } from './login-page/login.model';
 import { Injectable } from '@angular/core';
 import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
+import { Login } from './login.model';
 
 @Injectable({
   providedIn: 'root'

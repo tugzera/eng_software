@@ -1,6 +1,6 @@
-import { Login } from './login.model';
-import { LoginPageService } from './../login-page.service';
 import { Component, OnInit } from '@angular/core';
+import { Login } from './login.model';
+//import { LoginPageService } from './login-page.service';
 
 @Component({
   selector: 'app-login-page',
@@ -8,31 +8,36 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
+  
+  login: Login[];
+  //constructor(
+  //  private service: LoginPageService
+  //) { }
+  //private login: Login = new Login();
 
-  constructor( 
-    private service: LoginPageService
-  ) { }
 
-  login:Array<Login>
 
   ngOnInit() {
+
   }
 
-  compareLogin()
-  {
+  /*compareLogin() {
     console.log("aqui")
-   /* this.service.getLogin().subscribe((a) => a.forEach((l,i,a) =>{
-     console.log( l.email)
-    }))*/
+     this.service.getLogin().subscribe((a) => a.forEach((l,i,a) =>{
+      console.log( l.email)
+     }))
     this.service.getLogin().subscribe((a) => this.login = a)
   }
-  teste:Login
+  
+  teste: Login
 
-  imprimir(){
+  imprimir() {
 
-    this.login.forEach((a,b,c) => {
+    this.login.forEach((a, b, c) => {
       console.log(a)
     })
   }
+  */
+  
   
 }

@@ -1,134 +1,88 @@
-<title>Collapsible sidebar using Bootstrap 4</title>
-
-<!-- Bootstrap CSS CDN -->
-
-<!-- Our Custom CSS -->
-<!-- Font Awesome JS -->
-
-
-
-<body>
-
-  <div class="wrapper">
-    <!-- Sidebar  -->
-    <nav id="sidebar">
-      <div class="sidebar-header">
-        <h3>Teste 123</h3>
-        <strong>Ts</strong>
-      </div>
-
-      <ul class="list-unstyled components">
-        <li class="active">
-          <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-            <i class="fas fa-home"></i>
-            Home
-          </a>
-          <ul class="collapse list-unstyled" id="homeSubmenu">
-            <li>
-              <a href="#">Home 1</a>
-            </li>
-            <li>
-              <a href="#">Home 2</a>
-            </li>
-            <li>
-              <a href="#">Home 3</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fas fa-briefcase"></i>
-            About
-          </a>
-          <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-            <i class="fas fa-copy"></i>
-            Pages
-          </a>
-          <ul class="collapse list-unstyled" id="pageSubmenu">
-            <li>
-              <a href="#">Page 1</a>
-            </li>
-            <li>
-              <a href="#">Page 2</a>
-            </li>
-            <li>
-              <a href="#">Page 3</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fas fa-image"></i>
-            Portfolio
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fas fa-question"></i>
-            FAQ
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fas fa-paper-plane"></i>
-            Contact
-          </a>
-        </li>
-      </ul>
-
-      <ul class="list-unstyled CTAs">
-        <li>
-          <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
-        </li>
-        <li>
-          <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- Page Content  -->
-    <div id="content">
-
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-
-          <button type="button" id="sidebarCollapse" class="btn btn-info">
-            <i class="fas fa-align-left"></i>
-            <span>Toggle Sidebar</span>
-          </button>
-          <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <i class="fas fa-align-justify"></i>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="nav navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Page</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Page</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Page</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Page</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+<div class="wrapper">
+  <!-- Sidebar  -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <button class="btn" type="button" id="sidebarCollapse" data-toggle="collapse"
+        data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <h3 style="color:white!important;">Photo System</h3>
+        <strong style="color:white!important">PS</strong>
+      </button>
     </div>
+
+    <ul class="list-unstyled components">
+      <li class="active">
+        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+          <i class="fas fa-home"></i>
+          Home
+        </a>
+        <ul class="collapse list-unstyled" id="homeSubmenu">
+          <li>
+            <a href="#">Pagina Inicial</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+          <i class="fas fa-folder"></i>
+          Arquivos
+        </a>
+        <ul class="collapse list-unstyled" id="pageSubmenu">
+          <li>
+            <a href="#">
+              <i class="fas fa-camera-retro"></i>
+              Fotos</a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-film"></i>
+              Vídeos</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#pageCliente" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+          <i class="fas fa-address-book"></i>
+          Clientes
+        </a>
+        <ul class="collapse list-unstyled" id="pageCliente">
+          <li>
+            <a href="#">
+              <i class="fas fa-address-card"></i>
+              Cadastrar Cliente</a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-file"></i>
+              Gerenciar Arquivos Cliente</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fas fa-briefcase"></i>
+          Sobre a Empresa
+        </a>
+        <a href="#">
+          <i class="fas fa-question"></i>
+          FAQ
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fas fa-paper-plane"></i>
+          Contato
+        </a>
+      </li>
+
+
+    </ul>
+
+
+
+  </nav>
+  <div id="content">
+
   </div>
 
-  <!-- jQuery CDN - Slim version (=without AJAX) -->
-
-  <!-- Popper.JS -->
-
-  <!-- Bootstrap JS -->
-
-
-
-</body>
+</div>
