@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms'
@@ -13,6 +13,8 @@ import { TopPageComponent } from './top-page/top-page.component';
 import { NavBarAdminComponent } from './nav-bar-admin/nav-bar-admin.component';
 import { ClientFormComponent } from './client-form/client-form.component';
 import { TopPageClienteComponent } from './top-page-cliente/top-page-cliente.component';
+import { routing } from './app.routing';
+import { AdminModule } from './nav-bar-admin/nav-bar-admin.module';
 
 @NgModule({
   declarations: [
@@ -28,9 +30,11 @@ import { TopPageClienteComponent } from './top-page-cliente/top-page-cliente.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
+    routing,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]
