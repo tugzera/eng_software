@@ -12,15 +12,11 @@
 
     <ul class="list-unstyled components">
       <li class="active">
-        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+        <a [routerLink]="['/admin/home']" routerLinkActive="router-link-active"  data-toggle="collapse" aria-expanded="false" >
           <i class="fas fa-home"></i>
           Home
         </a>
-        <ul class="collapse list-unstyled" id="homeSubmenu">
-          <li>
-            <a href="#">Pagina Inicial</a>
-          </li>
-        </ul>
+        
       </li>
       <li>
         <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -29,12 +25,12 @@
         </a>
         <ul class="collapse list-unstyled" id="pageSubmenu">
           <li>
-            <a href="#">
+            <a [routerLink]="['/admin/files/photos']" routerLinkActive="router-link-active" >
               <i class="fas fa-camera-retro"></i>
               Fotos</a>
           </li>
           <li>
-            <a href="#">
+            <a [routerLink]="['/admin/files/videos']" routerLinkActive="router-link-active" >
               <i class="fas fa-film"></i>
               Vídeos</a>
           </li>
@@ -52,7 +48,7 @@
               Cadastrar Cliente</a>
           </li>
           <li>
-            <a href="#">
+            <a [routerLink]="['/admin/list']" routerLinkActive="router-link-active" >
               <i class="fas fa-file"></i>
               Gerenciar Arquivos Cliente</a>
           </li>

@@ -11,7 +11,6 @@ import { FooterBarComponent } from './footer-bar/footer-bar.component';
 import { TesteComponent } from './teste/teste.component';
 import { TopPageComponent } from './top-page/top-page.component';
 import { NavBarAdminComponent } from './nav-bar-admin/nav-bar-admin.component';
-import { ClientFormComponent } from './client-form/client-form.component';
 import { TopPageClienteComponent } from './top-page-cliente/top-page-cliente.component';
 import { routing } from './app.routing';
 import { AdminModule } from './nav-bar-admin/nav-bar-admin.module';
@@ -25,8 +24,7 @@ import { AdminModule } from './nav-bar-admin/nav-bar-admin.module';
     TesteComponent,
     TopPageComponent,
     NavBarAdminComponent,
-    ClientFormComponent,
-    TopPageClienteComponent
+    TopPageClienteComponent,
   ],
   imports: [
     BrowserModule,
