@@ -11,7 +11,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 @NgModule({
     declarations: [ClienteFormComponent, ClienteListComponent, ArquivosFotosComponent, ArquivosVideosComponent, HomePageComponent],
     imports: [ CommonModule, adminRoutingModule ],
-    exports: [],
+    exports: [ ClienteFormComponent, ClienteListComponent],
     providers: [],
 })
 export class AdminModule {}
