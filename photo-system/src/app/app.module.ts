@@ -14,6 +14,7 @@ import { NavBarAdminComponent } from './nav-bar-admin/nav-bar-admin.component';
 import { TopPageClienteComponent } from './top-page-cliente/top-page-cliente.component';
 import { routing } from './app.routing';
 import { AdminModule } from './nav-bar-admin/nav-bar-admin.module';
+import { UserModule } from './nav-bar/nav-bar.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AdminModule } from './nav-bar-admin/nav-bar-admin.module';
     FormsModule,
     AppRoutingModule,
     routing,
-    AdminModule
+    AdminModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
