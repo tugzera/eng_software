@@ -1,3 +1,4 @@
+import { AuthGuardService } from './guards/auth-guard.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -15,6 +16,7 @@ import { TopPageClienteComponent } from './top-page-cliente/top-page-cliente.com
 import { routing } from './app.routing';
 import { AdminModule } from './nav-bar-admin/nav-bar-admin.module';
 import { UserModule } from './nav-bar/nav-bar.module';
+import { AuthService } from './login-page/auth.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,7 @@ import { UserModule } from './nav-bar/nav-bar.module';
     AdminModule,
     UserModule
   ],
-  providers: [],
+  providers: [AuthService,AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,4 @@
+import { AuthService } from './login-page/auth.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'photo-system';
+
+  mostrarMenu: boolean = false;
+
+  constructor(private authService: AuthService) {
+
+  }
+
+  ngOnInit(){
+    this.authService.mostrarMenu.subscribe(mostrar => this.mostrarMenu = mostrar);
+  }
 }

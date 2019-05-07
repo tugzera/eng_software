@@ -1,3 +1,4 @@
+import { AuthService } from './auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Login } from './login.model';
 //import { LoginPageService } from './login-page.service';
@@ -9,18 +10,27 @@ import { Login } from './login.model';
 })
 export class LoginPageComponent implements OnInit {
   
-  login: Login[];
+  //login: Login[];
   //constructor(
   //  private service: LoginPageService
   //) { }
   //private login: Login = new Login();
 
+  private login: Login = new Login();
 
+
+  constructor(private authService: AuthService) {
+    
+  }
 
   ngOnInit() {
 
   }
 
+  fazerLogin() {
+    //console.log(this.login)
+    this.authService.fazerLogin(this.login);
+  }
   /*compareLogin() {
     console.log("aqui")
      this.service.getLogin().subscribe((a) => a.forEach((l,i,a) =>{
