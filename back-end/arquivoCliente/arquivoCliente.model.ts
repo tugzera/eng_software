@@ -13,11 +13,13 @@ export const arquivoClienteSchema = new mongoose.Schema({
         unique: true
     },
     foto: {
-        type: Schema.Types.ObjectId,
+        type: [Schema.Types.ObjectId],
+        default: undefined,
         required: true
     },
     video: {
-        type: Schema.Types.ObjectId,
+        type: [Schema.Types.ObjectId],
+        default: undefined,
         required: true
     }
 })

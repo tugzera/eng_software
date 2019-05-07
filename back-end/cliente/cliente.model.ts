@@ -1,5 +1,4 @@
 import mongoose, { Schema } from 'mongoose';
-import { Endereco } from './../endereco/endereco.model';
 
 export interface Cliente extends mongoose.Document {
     nome: String;
@@ -8,6 +7,7 @@ export interface Cliente extends mongoose.Document {
     password: String;
     telefone: String;
     end: Schema.Types.ObjectId;
+    status: String;
 
 }
 
@@ -38,7 +38,12 @@ const clienteSchema = new mongoose.Schema({
     end: {
         type: Schema.Types.ObjectId,
         required: true
+    },
+    status: {
+        type: String,
+        required: true,
+        select: false
     }
 })
 
-export const Cliente =  mongoose.model<Endereco>('Endereco', clienteSchema);
+export const Cliente =  mongoose.model<Cliente>('Cliente', clienteSchema);

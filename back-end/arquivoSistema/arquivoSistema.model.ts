@@ -18,11 +18,13 @@ export const arquivoSistemaSchema = new mongoose.Schema({
         required: true
     },
     foto: {
-        type: Schema.Types.ObjectId,
+        type: [Schema.Types.ObjectId],
+        default: undefined,
         required: true
     },
     video: {
-        type: Schema.Types.ObjectId,
+        type: [Schema.Types.ObjectId],
+        default: undefined,
         required: true
     }
 })
