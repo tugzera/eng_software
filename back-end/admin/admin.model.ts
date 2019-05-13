@@ -11,7 +11,7 @@ export interface Admin extends mongoose.Document {
 const adminSchema = new mongoose.Schema({
     nome: {
         type: String,
-        required: true
+        required: false
     },
     email: {
         type: String,
@@ -25,8 +25,8 @@ const adminSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        required: true,
-        select: false
+        required: false,
+        select: true
     }
 })
 

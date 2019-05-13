@@ -9,10 +9,10 @@ import { HomePageComponent } from './home-page/home-page.component';
 
 const adminRoutes = [
     { path: 'admin/cliente', component: ClienteFormComponent },
-    { path: 'admin/list', component: ClienteListComponent},
-    { path: 'admin/files/photos', component: ArquivosFotosComponent},
-    { path: 'admin/files/videos', component: ArquivosVideosComponent},
-    { path: 'admin/home', component: HomePageComponent}
+    { path: 'admin/list', component: ClienteListComponent },
+    { path: 'admin/files/photos', component: ArquivosFotosComponent },
+    { path: 'admin/files/videos', component: ArquivosVideosComponent },
+    { path: 'admin/home', component: HomePageComponent }
 ];
 
 @NgModule({

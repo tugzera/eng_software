@@ -2,13 +2,26 @@ import * as restify from 'restify';
 import { Routes } from '../routes/routes';
 import { Admin } from './admin.model';
 
+
 class adminRoutes extends Routes {
     applyRoutes(application: restify.Server) {
         application.get('/admin', (req, resp, next) => {
             Admin.find().then(admin => {
+                //console.log('admin')
                 resp.json(admin);
                 return next();
             })
+        })
+
+        application.post('/login', (req, resp, next) => {
+            let obj = new Admin(req.body);  
+            let teste = new Admin();
+
+            Admin.findOne({ $and: [{ "email": obj.email }, { "password": obj.password }]})
+                .then(u => {
+                    resp.json(u);    
+                    return next();
+                }).catch(next);
         })
 
         application.post('/admin', (req, resp, next) => {
@@ -35,7 +48,7 @@ class adminRoutes extends Routes {
         })
 
         application.patch('/admin/:id', (req, resp, next) => {
-            Admin.findByIdAndUpdate({_id: req.params.id}, req.body,{new: true}).then( admin => {
+            Admin.findByIdAndUpdate({ _id: req.params.id }, req.body, { new: true }).then(admin => {
                 resp.json(admin);
                 return next();
             })

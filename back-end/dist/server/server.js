@@ -24,7 +24,9 @@ var Server = /** @class */ (function () {
     }
     Server.prototype.initializeDb = function () {
         mongoose_1.default.Promise = global.Promise;
-        return mongoose_1.default.connect('mongodb://localhost/photodb');
+        return mongoose_1.default.connect('mongodb://localhost/photodb', { useNewUrlParser: true,
+            useCreateIndex: true
+        });
     };
     Server.prototype.initializeRoutes = function (routers) {
         var _this = this;
@@ -40,7 +42,9 @@ var Server = /** @class */ (function () {
                 _this.application.pre(cors.preflight);
                 _this.application.use(cors.actual);
                 _this.application.use(restify.plugins.queryParser()); //geralmente utilizando no get para converter pesquisas
-                _this.application.use(restify.plugins.bodyParser()); // convert json em object automaticamente
+                _this.application.use(restify.plugins.bodyParser({ mapParams: false })); // convert json em object automaticamente
+                _this.application.use(restify.plugins.authorizationParser());
+                _this.application.use(restify.plugins.acceptParser(_this.application.acceptable));
                 for (var _i = 0, routers_1 = routers; _i < routers_1.length; _i++) {
                     var router = routers_1[_i];
                     router.applyRoutes(_this.application);

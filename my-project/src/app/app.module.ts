@@ -5,27 +5,32 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginPageComponent } from './login-page/login-page.component';
+import { NavBarComponent } from './pages/nav-bar/nav-bar.component';
+import { FooterComponent } from './pages/footer/footer.component';
+import { LoginComponent } from './pages/login/login.component';
+import { AdminNavbarComponent } from './pages/admin-navbar/admin-navbar.component';
+import { AuthService } from './pages/login/auth.service';
 import { routing } from './app.routing';
-import { AdminPageComponent } from './admin-page/admin-page.component';
-import { UserPageComponent } from './user-page/user-page.component';
-import { AuthService } from './login-page/auth.service';
+import { HomeComponent } from './pages/admin/home/home.component';
+import { AuthGuardService } from './guards/auth.guard.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginPageComponent,
-    AdminPageComponent,
-    UserPageComponent
+    NavBarComponent,
+    FooterComponent,
+    LoginComponent,
+    AdminNavbarComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    routing
+    routing,
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

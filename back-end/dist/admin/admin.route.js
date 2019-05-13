@@ -23,9 +23,19 @@ var adminRoutes = /** @class */ (function (_super) {
     adminRoutes.prototype.applyRoutes = function (application) {
         application.get('/admin', function (req, resp, next) {
             admin_model_1.Admin.find().then(function (admin) {
+                //console.log('admin')
                 resp.json(admin);
                 return next();
             });
+        });
+        application.post('/login', function (req, resp, next) {
+            var obj = new admin_model_1.Admin(req.body);
+            var teste = new admin_model_1.Admin();
+            admin_model_1.Admin.findOne({ $and: [{ "email": obj.email }, { "password": obj.password }] })
+                .then(function (u) {
+                resp.json(u);
+                return next();
+            }).catch(next);
         });
         application.post('/admin', function (req, resp, next) {
             var admin = new admin_model_1.Admin(req.body);

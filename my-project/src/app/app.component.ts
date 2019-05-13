@@ -1,5 +1,7 @@
-import { AuthService } from './login-page/auth.service';
+import { LoginComponent } from './pages/login/login.component';
 import { Component } from '@angular/core';
+
+import { AuthService } from './pages/login/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,15 +11,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'my-project';
 
-  mostrarMenu: Boolean = false;
+  mostrarMenu: boolean = false;
 
-  constructor (private AuthService: AuthService) {
+  constructor(private authService: AuthService) {
 
   }
 
-  ngOnInit () {
-    this.AuthService.mostrarMenuEmitter.subscribe(
-      mostrar => this.mostrarMenu = mostrar
-    );
+  ngOnInit() {
+    this.authService.mostrarMenu.subscribe(mostrar => this.mostrarMenu = mostrar);
   }
+
 }

@@ -13,7 +13,9 @@ export class Server {
 
     initializeDb(): any {
         (<any>mongoose).Promise = global.Promise;
-        return mongoose.connect('mongodb://localhost/photodb');
+        return mongoose.connect('mongodb://localhost/photodb',{useNewUrlParser:true,
+        useCreateIndex:true    
+    });
     }
 
     initializeRoutes(routers:Routes[]):Promise<any>{
@@ -30,8 +32,9 @@ export class Server {
                 this.application.pre(cors.preflight)
                 this.application.use(cors.actual)
                 this.application.use(restify.plugins.queryParser())//geralmente utilizando no get para converter pesquisas
-                this.application.use(restify.plugins.bodyParser())// convert json em object automaticamente
-            
+                this.application.use(restify.plugins.bodyParser({mapParams:false}))// convert json em object automaticamente
+                this.application.use(restify.plugins.authorizationParser())
+                this.application.use(restify.plugins.acceptParser(this.application.acceptable))
                 for( let router of routers){
                     router.applyRoutes(this.application)
                 }

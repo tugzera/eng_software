@@ -19,11 +19,13 @@ exports.arquivoSistemaSchema = new mongoose_1.default.Schema({
         required: true
     },
     foto: {
-        type: mongoose_1.Schema.Types.ObjectId,
+        type: [mongoose_1.Schema.Types.ObjectId],
+        default: undefined,
         required: true
     },
     video: {
-        type: mongoose_1.Schema.Types.ObjectId,
+        type: [mongoose_1.Schema.Types.ObjectId],
+        default: undefined,
         required: true
     }
 });

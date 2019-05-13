@@ -35,6 +35,11 @@ var clienteSchema = new mongoose_1.default.Schema({
     end: {
         type: mongoose_1.Schema.Types.ObjectId,
         required: true
+    },
+    status: {
+        type: String,
+        required: true,
+        select: false
     }
 });
-exports.Cliente = mongoose_1.default.model('Endereco', clienteSchema);
+exports.Cliente = mongoose_1.default.model('Cliente', clienteSchema);

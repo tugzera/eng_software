@@ -1,4 +1,3 @@
-
 <div class="wrapper">
   <!-- Sidebar  -->
   <nav id="sidebar">
@@ -13,11 +12,12 @@
 
     <ul class="list-unstyled components">
       <li class="active">
-        <a [routerLink]="['/admin/home']" routerLinkActive="router-link-active"  data-toggle="collapse" aria-expanded="false" >
+        <a [routerLink]="['/admin/home']" routerLinkActive="router-link-active" data-toggle="collapse"
+          aria-expanded="false">
           <i class="fas fa-home"></i>
           Home
         </a>
-        
+
       </li>
       <li>
         <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -26,12 +26,12 @@
         </a>
         <ul class="collapse list-unstyled" id="pageSubmenu">
           <li>
-            <a [routerLink]="['/admin/files/photos']" routerLinkActive="router-link-active" >
+            <a [routerLink]="['/admin/files/photos']" routerLinkActive="router-link-active">
               <i class="fas fa-camera-retro"></i>
               Fotos</a>
           </li>
           <li>
-            <a [routerLink]="['/admin/files/videos']" routerLinkActive="router-link-active" >
+            <a [routerLink]="['/admin/files/videos']" routerLinkActive="router-link-active">
               <i class="fas fa-film"></i>
               Vídeos</a>
           </li>
@@ -44,12 +44,12 @@
         </a>
         <ul class="collapse list-unstyled" id="pageCliente">
           <li>
-            <a [routerLink]="['/admin/cliente']" routerLinkActive="router-link-active" >
+            <a [routerLink]="['/admin/cliente']" routerLinkActive="router-link-active">
               <i class="fas fa-address-card"></i>
               Cadastrar Cliente</a>
           </li>
           <li>
-            <a [routerLink]="['/admin/list']" routerLinkActive="router-link-active" >
+            <a [routerLink]="['/admin/list']" routerLinkActive="router-link-active">
               <i class="fas fa-file"></i>
               Gerenciar Arquivos Cliente</a>
           </li>
@@ -81,9 +81,10 @@
   <div id="content">
     <app-top-page></app-top-page>
     <!--      
-      <app-cliente-form></app-cliente-form>
       <app-cliente-list></app-cliente-list>
+      <app-cliente-form></app-cliente-form>
     -->
+    
   </div>
 
 </div>
