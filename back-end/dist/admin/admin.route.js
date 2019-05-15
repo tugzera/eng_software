@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+var md5_1 = require("ts-md5/dist/md5");
 var routes_1 = require("../routes/routes");
 var admin_model_1 = require("./admin.model");
 var adminRoutes = /** @class */ (function (_super) {
@@ -30,7 +31,12 @@ var adminRoutes = /** @class */ (function (_super) {
         });
         application.post('/login', function (req, resp, next) {
             var obj = new admin_model_1.Admin(req.body);
-            var teste = new admin_model_1.Admin();
+            //console.log('senha: ', obj.password);
+            //let myHash = bcrypt.hashSync(obj.password, 10);
+            //console.log(myHash);
+            var myHash = md5_1.Md5.hashStr(obj.password);
+            obj.password = myHash;
+            //console.log(obj.password);
             admin_model_1.Admin.findOne({ $and: [{ "email": obj.email }, { "password": obj.password }] })
                 .then(function (u) {
                 resp.json(u);
@@ -39,8 +45,13 @@ var adminRoutes = /** @class */ (function (_super) {
         });
         application.post('/admin', function (req, resp, next) {
             var admin = new admin_model_1.Admin(req.body);
+            //let myHash = bcrypt.hashSync(admin.password, 10);
+            //admin.password = myHash;
+            var myHash = md5_1.Md5.hashStr(admin.password);
+            admin.password = myHash;
             admin.save().then(function (admin) {
                 resp.json(admin);
+                console.log(admin);
             }, function (error) {
                 console.log(error);
             });

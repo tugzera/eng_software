@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
 
     this.service.getLogin(this.login).subscribe(u => {
       teste = u;
+      console.log('Aq:' , u); 
       this.authService.fazerLogin(teste);
     })
     

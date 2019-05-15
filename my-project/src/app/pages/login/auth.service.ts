@@ -24,13 +24,13 @@ export class AuthService {
 
   fazerLogin(login: Login) {
     if (login != null) {
-      console.log('verdade');
+      //console.log('verdade');
       this.loginAutenticado = true;
       this.mostrarMenu.emit(true)
       this.router.navigate(['/admin']);
     }
     else {
-      console.log('false');
+      //console.log('false');
       this.loginAutenticado = false;
       this.mostrarMenu.emit(false);
       this.router.navigate(['/login']);
