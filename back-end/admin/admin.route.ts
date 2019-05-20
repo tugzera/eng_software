@@ -1,11 +1,9 @@
 import * as restify from 'restify';
-import * as bcrypt from 'bcrypt';
 import { Md5 } from 'ts-md5/dist/md5';
 
 import { Routes } from '../routes/routes';
 import { Admin } from './admin.model';
-import { resolve } from 'path';
-import { JsonWebTokenError } from 'jsonwebtoken';
+import { Cliente } from '../cliente/cliente.model';
 
 
 class adminRoutes extends Routes {
@@ -16,23 +14,6 @@ class adminRoutes extends Routes {
                 resp.json(admin);
                 return next();
             })
-        })
-
-        application.post('/login', (req, resp, next) => {
-            let obj = new Admin(req.body);
-            //console.log('senha: ', obj.password);
-            //let myHash = bcrypt.hashSync(obj.password, 10);
-            //console.log(myHash);
-            let myHash = <String>Md5.hashStr(<string>obj.password);
-            obj.password = myHash;
-            //console.log(obj.password);
-            Admin.findOne({ $and: [{ "email": obj.email }, { "password": obj.password }] })
-                .then(u => {
-                    resp.json(u);
-                    return next();
-                }).catch(next);
-
-
         })
 
         application.post('/admin', (req, resp, next) => {

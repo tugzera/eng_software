@@ -15,7 +15,7 @@ var clienteSchema = new mongoose_1.default.Schema({
     },
     cpf: {
         type: String,
-        required: true,
+        required: false,
         unique: true
     },
     email: {
@@ -30,16 +30,16 @@ var clienteSchema = new mongoose_1.default.Schema({
     },
     telefone: {
         type: String,
-        required: true
+        required: false
     },
     end: {
         type: mongoose_1.Schema.Types.ObjectId,
-        required: true
+        required: false
     },
     status: {
         type: String,
         required: true,
-        select: false
+        select: true
     }
 });
 exports.Cliente = mongoose_1.default.model('Cliente', clienteSchema);

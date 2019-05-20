@@ -1,4 +1,3 @@
-import { LoginServiceService } from './login-service.service';
 import { Injectable, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -9,28 +8,37 @@ import { Login } from './login.model';
 })
 export class AuthService {
 
-  private login: Login = new Login();
-
-  private admin: Login[];
-
   private loginAutenticado: boolean = false;
+
+  private loginAutenticadoUser : boolean = false;
 
   mostrarMenu = new EventEmitter<boolean>();
 
+  mostrarMenuUser = new EventEmitter<boolean>();
+
   constructor(
     private router: Router,
-    private service: LoginServiceService
   ) { }
 
   fazerLogin(login: Login) {
     if (login != null) {
-      //console.log('verdade');
-      this.loginAutenticado = true;
-      this.mostrarMenu.emit(true)
-      this.router.navigate(['/admin']);
+      if (login.status === 'admin')
+      {
+        this.loginAutenticado = true;
+        this.mostrarMenu.emit(true)
+        this.router.navigate(['/admin']);
+      }
+      if ( login.status === 'user')
+      {
+        console.log('user');
+        this.loginAutenticadoUser = true;
+        this.mostrarMenuUser.emit(true);
+        this.router.navigate(['/user']);
+      }
     }
+
     else {
-      //console.log('false');
+      console.log('false');
       this.loginAutenticado = false;
       this.mostrarMenu.emit(false);
       this.router.navigate(['/login']);
@@ -43,5 +51,8 @@ export class AuthService {
     return this.loginAutenticado;
   }
 
+  loginAuthUser () {
+    return this.loginAutenticadoUser;
+  }
 
 }

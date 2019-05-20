@@ -1,4 +1,6 @@
 import * as restify from 'restify';
+import { Md5 } from 'ts-md5/dist/md5';
+
 import { Cliente } from './cliente.model';
 import { Routes } from '../routes/routes';
 
@@ -13,7 +15,10 @@ class clienteRoutes extends Routes {
 
         application.post('/cliente', (req, resp, next) => {
             let cliente = new Cliente(req.body);
+            let myHash = <string>Md5.hashStr(<string>cliente.password);
 
+            cliente.password = myHash;
+            
             cliente.save().then(cliente => {
                 resp.json(cliente);
             }, error => {

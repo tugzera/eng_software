@@ -1,3 +1,4 @@
+import { HomeUserComponent } from './pages/user/home-user/home-user.component';
 import { Routes, RouterModule } from "@angular/router";
 import { LoginComponent } from './pages/login/login.component';
 
@@ -8,7 +9,8 @@ import { AuthGuardService } from './guards/auth.guard.service';
 const APP_ROUTES: Routes = [
     { path: 'login', component: LoginComponent},
     { path: '', component: LoginComponent},
-    { path: 'admin', component: HomeComponent, canActivate: [AuthGuardService]}
+    { path: 'admin', component: HomeComponent, canActivate: [AuthGuardService]},
+    { path: 'user', component: HomeUserComponent, canActivate: [AuthGuardService]}
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);

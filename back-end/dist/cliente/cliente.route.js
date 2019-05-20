@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+var md5_1 = require("ts-md5/dist/md5");
 var cliente_model_1 = require("./cliente.model");
 var routes_1 = require("../routes/routes");
 var clienteRoutes = /** @class */ (function (_super) {
@@ -29,6 +30,8 @@ var clienteRoutes = /** @class */ (function (_super) {
         });
         application.post('/cliente', function (req, resp, next) {
             var cliente = new cliente_model_1.Cliente(req.body);
+            var myHash = md5_1.Md5.hashStr(cliente.password);
+            cliente.password = myHash;
             cliente.save().then(function (cliente) {
                 resp.json(cliente);
             }, function (error) {

@@ -18,7 +18,7 @@ const clienteSchema = new mongoose.Schema({
     },
     cpf: {
         type: String,
-        required: true,
+        required: false,
         unique: true
     },
     email: {
@@ -33,16 +33,16 @@ const clienteSchema = new mongoose.Schema({
     },
     telefone: {
         type: String,
-        required: true
+        required: false
     },
     end: {
         type: Schema.Types.ObjectId,
-        required: true
+        required: false
     },
     status: {
         type: String,
         required: true,
-        select: false
+        select: true
     }
 })
 

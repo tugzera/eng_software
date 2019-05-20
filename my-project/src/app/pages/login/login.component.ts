@@ -1,5 +1,4 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { AuthService } from './auth.service';
 import { Login } from './login.model';
@@ -14,11 +13,13 @@ export class LoginComponent implements OnInit {
 
   private login: Login = new Login();
 
-  private admin: Login[];
-
   private loginAutenticado: boolean = false;
 
+  private loginAutenticadoUser: boolean = false;
+
   mostrarMenu = new EventEmitter<boolean>();
+
+  mostrarMenuUser = new EventEmitter<boolean>();
 
 
   constructor(
@@ -32,17 +33,21 @@ export class LoginComponent implements OnInit {
 
   fazerLogin() {
     let teste: Login = new Login(); //teste retorna o objeto com os dados
-
     this.service.getLogin(this.login).subscribe(u => {
       teste = u;
-      console.log('Aq:' , u); 
+      console.log(teste);
+      //console.log('Aq:', u);
       this.authService.fazerLogin(teste);
     })
-    
+    this.authService.fazerLogin(null);
   }
 
   loginAuth() {
     return this.loginAutenticado.valueOf;
+  }
+
+  loginAuthUser() {
+    return this.loginAutenticadoUser.valueOf;
   }
   /*compareLogin() {
     //console.log("aqui")

@@ -13,6 +13,7 @@ import { AuthService } from './pages/login/auth.service';
 import { routing } from './app.routing';
 import { HomeComponent } from './pages/admin/home/home.component';
 import { AuthGuardService } from './guards/auth.guard.service';
+import { HomeUserComponent } from './pages/user/home-user/home-user.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AuthGuardService } from './guards/auth.guard.service';
     LoginComponent,
     AdminNavbarComponent,
     HomeComponent,
+    HomeUserComponent,
   ],
   imports: [
     BrowserModule,
