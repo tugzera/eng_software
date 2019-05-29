@@ -32,12 +32,12 @@ export class LoginComponent implements OnInit {
   }
 
   fazerLogin() {
-    let teste: Login = new Login(); //teste retorna o objeto com os dados
+    let login: Login = new Login(); //teste retorna o objeto com os dados
     this.service.getLogin(this.login).subscribe(u => {
-      teste = u;
-      console.log(teste);
+      login = u;
+      //console.log(teste);
       //console.log('Aq:', u);
-      this.authService.fazerLogin(teste);
+      this.authService.fazerLogin(login);
     })
     this.authService.fazerLogin(null);
   }
