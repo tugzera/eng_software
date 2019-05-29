@@ -1,0 +1,44 @@
+<div class="card mt-3">
+  <div class="card-header">
+    <div class="float-left">
+      <h4>Vídeos</h4>
+      <div class="float-right">
+      </div>
+    </div>
+    <span class="float-right">
+        <button class="btn btn-success mb-1 btn-sm">
+          <i class="fas fa-plus-square fa-2x"></i>
+        </button>
+    </span>
+  </div>
+  <div class="card-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Evento</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr> <!-- LACO REPETICAO AQUI-->
+            <td>{{ video.data }}</td> <!-- EDIT AQUI-->
+            <td>{{ video.evento }}</td>
+            <td>
+              <span class="float-right">
+                <button class="btn btn-outline-primary mb-1 btn-sm">Visualizar</button>
+                <button class="btn btn-outline-warning mb-1 btn-sm">
+                  Editar1
+                </button>
+  
+                <button class="btn btn-outline-danger mb-1 btn-sm">
+                  Remover
+                </button>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+
+    </table>
+  </div>
+</div>
