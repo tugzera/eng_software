@@ -30,7 +30,7 @@ export class AuthService {
       }
       if ( login.status === 'user')
       {
-        console.log('user');
+        //console.log('user');
         this.loginAutenticadoUser = true;
         this.mostrarMenuUser.emit(true);
         this.router.navigate(['/user']);
@@ -38,7 +38,7 @@ export class AuthService {
     }
 
     else {
-      console.log('false');
+      //console.log('false');
       this.loginAutenticado = false;
       this.mostrarMenu.emit(false);
       this.router.navigate(['/login']);

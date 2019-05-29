@@ -12,7 +12,11 @@ exports.fotoSchema = new mongoose_1.default.Schema({
         select: false
     },
     date: {
-        type: Date,
+        type: String,
+        required: true
+    },
+    evento: {
+        type: String,
         required: true
     }
 });

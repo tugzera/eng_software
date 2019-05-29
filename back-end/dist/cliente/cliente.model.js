@@ -15,7 +15,7 @@ var clienteSchema = new mongoose_1.default.Schema({
     },
     cpf: {
         type: String,
-        required: false,
+        required: true,
         unique: true
     },
     email: {

@@ -2,7 +2,8 @@ import mongoose from 'mongoose';
 
 export interface Foto extends mongoose.Document{
     link: String;
-    date: Date;
+    date: String;
+    evento: String;
 }
 
 export const fotoSchema = new mongoose.Schema({
@@ -13,7 +14,11 @@ export const fotoSchema = new mongoose.Schema({
         select: false
     },
     date: {
-        type: Date,
+        type: String,
+        required: true
+    },
+    evento: {
+        type: String,
         required: true
     }   
         

@@ -21,9 +21,9 @@
         </tr>
       </thead>
       <tbody>
-          <tr> <!-- LACO REPETICAO AQUI-->
-            <td>{{ photo.data }}</td> <!-- EDIT AQUI-->
-            <td>{{ photo.evento }}</td>
+          <tr *ngFor="let foto of fotos"> <!-- LACO REPETICAO AQUI-->
+            <td>{{ foto.date }}</td> <!-- EDIT AQUI-->
+            <td>{{ foto.evento }}</td>
             <td>
               <span class="float-right">
                 <button class="btn btn-outline-primary mb-1 btn-sm">Visualizar</button>&nbsp;

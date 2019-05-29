@@ -6,9 +6,9 @@
       </div>
     </div>
     <span class="float-right">
-        <button class="btn btn-success mb-1 btn-sm">
-          <i class="fas fa-plus-square fa-2x"></i>
-        </button>
+      <button class="btn btn-success mb-1 btn-sm">
+        <i class="fas fa-plus-square fa-2x"></i>
+      </button>
     </span>
   </div>
   <div class="card-body">
@@ -21,23 +21,22 @@
         </tr>
       </thead>
       <tbody>
-          <tr> <!-- LACO REPETICAO AQUI-->
-            <td>{{ cliente.cpf }}</td> <!-- EDIT AQUI-->
-            <td>{{ cliente.nome }}</td>
-            <td>
-              <span class="float-right">
-                <button class="btn btn-outline-primary mb-1 btn-sm">Arquivos</button>&nbsp;
-                <button class="btn btn-outline-warning mb-1 btn-sm">
-                  Editar
-                </button>&nbsp;
-  
-                <button class="btn btn-outline-danger mb-1 btn-sm">
-                  Remover
-                </button>
-              </span>
-            </td>
-          </tr>
-        </tbody>
+        <tr *ngFor="let cliente of clientes">
+          <td> {{ cliente.cpf }} </td> <!-- EDIT AQUI-->
+          <td> {{ cliente.nome }}</td>
+          <td>
+            <span class="float-right">
+              <button class="btn btn-primary mb-1 btn-sm">Arquivos</button>&nbsp;
+              <button class="btn btn-warning mb-1 btn-sm">
+                Editar
+              </button>&nbsp;
+              <button class="btn btn-danger mb-1 btn-sm">
+                Remover
+              </button>
+            </span>
+          </td>
+        </tr>
+      </tbody>
 
     </table>
   </div>
