@@ -7,34 +7,27 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/admin/home']" >Home
-            <i class="fas fa-home" ></i>
+        <a class="nav-link" [routerLink]="['/admin/home']" >
+          <i class="fas fa-home" ></i>
+          Home
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/admin/dados']">Meus Dados
-            <i class="fas fa-user-tie"></i>
+        <a class="nav-link" [routerLink]="['/admin/dados']">
+          <i class="fas fa-user-tie"></i>
+          Meus Dados
         </a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/files']">
+          <i class="far fa-file-alt"></i>
           Arquivos
-          <i class="fas fa-file-alt"></i>
         </a>
-        <div class="dropdown-menu" href="#" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" [routerLink]="['/admin/files/photos']">Fotos
-              <i class="fas fa-camera-retro"></i>
-          </a>
-          <a class="dropdown-item" [routerLink]="['/admin/files/videos']">Vídeos
-              <i class="fas fa-video"></i>
-          </a>
-        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/admin/cliente']">
-          Clientes
           <i class="fas fa-users"></i>
+          Clientes
         </a>
       </li>
     </ul>

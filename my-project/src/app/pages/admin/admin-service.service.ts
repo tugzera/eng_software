@@ -4,6 +4,7 @@ import { tap } from 'rxjs/operators';
 
 import { Cliente } from '../admin/model/cliente.model';
 import { Foto } from '../admin/model/foto.model';
+import { ArquivoSistema } from '../admin/model/arquivoSistema.model';
 
 @Injectable({
   providedIn: 'root'
@@ -23,4 +24,12 @@ export class AdminServiceService {
       tap()
     );
   }
+
+  listAlbumFotos() {
+    return this.http.get<ArquivoSistema[]>('http://localhost:4000/arquivoSistema').pipe(
+      tap(console.log)
+    );
+  }
+  
+
 }

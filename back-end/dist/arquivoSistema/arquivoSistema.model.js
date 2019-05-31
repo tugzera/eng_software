@@ -15,18 +15,18 @@ exports.arquivoSistemaSchema = new mongoose_1.default.Schema({
         unique: true
     },
     date: {
-        type: Date,
+        type: String,
         required: true
     },
     foto: {
         type: [mongoose_1.Schema.Types.ObjectId],
         default: undefined,
-        required: true
+        required: false
     },
     video: {
         type: [mongoose_1.Schema.Types.ObjectId],
         default: undefined,
-        required: true
+        required: false
     }
 });
 exports.ArquivoSistema = mongoose_1.default.model('ArquivoSistema', exports.arquivoSistemaSchema);

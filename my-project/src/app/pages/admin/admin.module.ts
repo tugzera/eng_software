@@ -1,5 +1,6 @@
+import { FilesComponent } from './files/files.component';
 import { ClienteListComponent } from './cliente-list/cliente-list.component';
-import { CommonModule} from '@angular/common'
+import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core';
 
 
@@ -16,9 +17,10 @@ import { AdminDadosComponent } from './admin-dados/admin-dados.component';
         adminRoutingModule
     ],
     exports: [HomeComponent],
-    declarations: [HomeComponent, ClienteFormComponent, ClienteListComponent, FilesPhotosComponent, FilesVideosComponent, AdminDadosComponent],
+    declarations: [HomeComponent, ClienteFormComponent, ClienteListComponent, FilesPhotosComponent, FilesVideosComponent, AdminDadosComponent,
+        FilesComponent],
     providers: []
-    
+
 })
 
-export class AdminModule {}
+export class AdminModule { }
