@@ -1,7 +1,8 @@
-import { Foto} from '../model/foto.model';
+import * as mongoose from 'mongoose';
 
 export class ArquivoSistema {
+    _id: string;
     nome: string;
     date: string;
-    foto: Foto[];
+    foto: mongoose.Schema.Types.ObjectId[];
 }

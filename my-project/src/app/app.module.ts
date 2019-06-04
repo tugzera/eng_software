@@ -1,8 +1,10 @@
+import { HomeUserComponent } from './pages/user/home-user/home-user.component';
 import { AdminModule } from './pages/admin/admin.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CookieService} from 'ngx-cookie-service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,9 +14,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { AdminNavbarComponent } from './pages/admin/admin-navbar/admin-navbar.component';
 import { AuthService } from './pages/login/auth.service';
 import { routing } from './app.routing';
-import { HomeComponent } from './pages/admin/home/home.component';
 import { AuthGuardService } from './guards/auth.guard.service';
-import { HomeUserComponent } from './pages/user/home-user/home-user.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { HomeUserComponent } from './pages/user/home-user/home-user.component';
     FooterComponent,
     LoginComponent,
     AdminNavbarComponent,
-    HomeUserComponent,
+    HomeUserComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +33,7 @@ import { HomeUserComponent } from './pages/user/home-user/home-user.component';
     routing,
     AdminModule
   ],
-  providers: [AuthService, AuthGuardService],
+  providers: [AuthService, AuthGuardService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

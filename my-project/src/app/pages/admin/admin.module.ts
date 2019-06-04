@@ -1,3 +1,4 @@
+import { FilesIdComponent } from './files-id/files-id.component';
 import { FilesComponent } from './files/files.component';
 import { ClienteListComponent } from './cliente-list/cliente-list.component';
 import { CommonModule } from '@angular/common'
@@ -18,7 +19,7 @@ import { AdminDadosComponent } from './admin-dados/admin-dados.component';
     ],
     exports: [HomeComponent],
     declarations: [HomeComponent, ClienteFormComponent, ClienteListComponent, FilesPhotosComponent, FilesVideosComponent, AdminDadosComponent,
-        FilesComponent],
+        FilesComponent, FilesIdComponent],
     providers: []
 
 })

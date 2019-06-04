@@ -1,3 +1,4 @@
+import { FilesIdComponent } from './files-id/files-id.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
@@ -14,8 +15,7 @@ const adminRoutes = [
     { path: 'admin/cliente', component: ClienteListComponent, canActivate: [AuthGuardService]},
     { path: 'admin/dados', component: AdminDadosComponent, canActivate: [AuthGuardService]},
     { path: 'admin/files', component: FilesComponent, canActivate: [AuthGuardService]},
-    { path: 'admin/files/photos', component: FilesPhotosComponent, canActivate: [AuthGuardService]},
-    { path: 'admin/files/videos', component: FilesVideosComponent, canActivate: [AuthGuardService]}
+    { path: 'admin/files/:id', component: FilesIdComponent, canAcitvate: [AuthGuardService]}
 ];
 
 @NgModule({
