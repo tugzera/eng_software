@@ -11,6 +11,18 @@ class arquivoSistemaRoutes extends Routes {
             })
         });
 
+        application.get('/arquivoSistema/:id', (req, resp, next) => {
+            ArquivoSistema.findById(req.params.id,  (error, arquivosistema) => {
+                if(error) {
+                    return resp.send(500);
+                }
+                resp.json(arquivosistema);
+                console.log(arquivosistema);
+            })
+            return next();
+               
+        })
+
         application.post('/arquivoSistema', (req, resp, next) => {
             let arquivoSistema = new ArquivoSistema(req.body);
 

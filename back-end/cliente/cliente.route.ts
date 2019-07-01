@@ -13,18 +13,30 @@ class clienteRoutes extends Routes {
             })
         })
 
+        application.get('/cliente/:id', (req, resp, next) => {
+            Cliente.findById(req.params.id,  (error, cliente) => {
+                if(error) {
+                    return resp.send(500);
+                }
+                resp.json(cliente);
+                console.log(cliente);
+            })
+            return next();
+               
+        })
+
         application.post('/cliente', (req, resp, next) => {
             let cliente = new Cliente(req.body);
             let myHash = <string>Md5.hashStr(<string>cliente.password);
-
+            //console.log("aq");
             cliente.password = myHash;
             
             cliente.save().then(cliente => {
                 resp.json(cliente);
+                return next();
             }, error => {
                 console.log(error);
             })
-            return next();
         })
 
         application.del('/cliente/:id', (req, resp, next) => {

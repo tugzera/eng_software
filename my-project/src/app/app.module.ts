@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService} from 'ngx-cookie-service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,17 +24,18 @@ import { AuthGuardService } from './guards/auth.guard.service';
     FooterComponent,
     LoginComponent,
     AdminNavbarComponent,
-    HomeUserComponent
+    HomeUserComponent,
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
     FormsModule,
+    BrowserModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
     HttpClientModule,
     routing,
     AdminModule
   ],
-  providers: [AuthService, AuthGuardService, CookieService],
+  providers: [AuthService, AuthGuardService, CookieService, FormsModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

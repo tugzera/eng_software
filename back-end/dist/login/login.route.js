@@ -38,7 +38,7 @@ var loginRoutes = /** @class */ (function (_super) {
             var user = new cliente_model_1.Cliente(req.body);
             var myHash1 = md5_1.Md5.hashStr(user.password);
             user.password = myHash1;
-            console.log(user);
+            //console.log(user);
             cliente_model_1.Cliente.findOne({ $and: [{ "email": user.email }, { "password": user.password }] }).
                 then(function (user) {
                 if (user != null) {

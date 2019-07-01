@@ -27,6 +27,16 @@ var arquivoSistemaRoutes = /** @class */ (function (_super) {
                 return next();
             });
         });
+        application.get('/arquivoSistema/:id', function (req, resp, next) {
+            arquivoSistema_model_1.ArquivoSistema.findById(req.params.id, function (error, arquivosistema) {
+                if (error) {
+                    return resp.send(500);
+                }
+                resp.json(arquivosistema);
+                console.log(arquivosistema);
+            });
+            return next();
+        });
         application.post('/arquivoSistema', function (req, resp, next) {
             var arquivoSistema = new arquivoSistema_model_1.ArquivoSistema(req.body);
             arquivoSistema.save().then(function (arquivoSistema) {

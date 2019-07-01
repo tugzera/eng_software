@@ -6,8 +6,15 @@ export interface Cliente extends mongoose.Document {
     email: String;
     password: String;
     telefone: String;
-    end: Schema.Types.ObjectId;
     status: String;
+    rua: String;
+    cep: String;
+    numero: Number;
+    bairro: String;
+    uf: String;
+    cidade: String;
+    complemento: String;
+    
 
 }
 
@@ -35,14 +42,38 @@ const clienteSchema = new mongoose.Schema({
         type: String,
         required: false
     },
-    end: {
-        type: Schema.Types.ObjectId,
-        required: false
-    },
+    
     status: {
         type: String,
         required: true,
         select: true
+    },
+    rua: {
+        type: String,
+        required: true
+    },
+    cep: {
+        type: String,
+        required: true
+    },
+    numero: {
+        type: Number,
+        required: true
+    },
+    bairro: {
+        type: String,
+        required: true
+    },
+    uf: {
+        type: String,
+        required: true
+    },
+    cidade: {
+        type: String,
+        required: true
+    },
+    complemento: {
+        type: String
     }
 })
 

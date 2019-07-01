@@ -18,12 +18,12 @@ exports.arquivoSistemaSchema = new mongoose_1.default.Schema({
         type: String,
         required: true
     },
-    foto: {
+    fotos: {
         type: [mongoose_1.Schema.Types.ObjectId],
         default: undefined,
         required: false
     },
-    video: {
+    videos: {
         type: [mongoose_1.Schema.Types.ObjectId],
         default: undefined,
         required: false

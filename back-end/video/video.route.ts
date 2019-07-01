@@ -11,6 +11,18 @@ class videoRoutes extends Routes {
             })
         });
 
+        application.get('/video/:id', (req, resp, next) => {
+            Video.findById(req.params.id,  (error, foto) => {
+                if(error) {
+                    return resp.send(500);
+                }
+                resp.json(foto);
+                console.log(foto);    
+            })
+            return next();
+               
+        })
+
         application.post('/video', (req, resp, next) => {
             let video = new Video(req.body);
 

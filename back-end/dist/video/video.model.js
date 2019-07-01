@@ -12,7 +12,7 @@ exports.videoSchema = new mongoose_1.default.Schema({
         select: false
     },
     date: {
-        type: Date,
+        type: String,
         required: true
     }
 });

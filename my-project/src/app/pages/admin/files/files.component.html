@@ -25,12 +25,10 @@
           <!-- LACO REPETICAO AQUI-->
           <td>{{ arquivo.date }}</td> <!-- EDIT AQUI-->
           <td>{{ arquivo.nome }}</td>
-          {{ arquivo._id }}
-
           <td>
             <span class="float-right">
-              <button class="btn btn-success mb-1 btn-sm">
-                <i class="fas fa-folder-open" [routerLink]="['/admin/files/', arquivo._id]" (click)="getIDCookie(arquivo._id)"></i>
+              <button class="btn btn-success mb-1 btn-sm" (click)="getIDCookie(arquivo._id)" >
+                <i class="fas fa-folder-open"></i>
                 Acessar
               </button>&nbsp;
               <button class="btn btn-danger mb-1 btn-sm">

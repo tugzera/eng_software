@@ -8,16 +8,11 @@ exports.fotoSchema = new mongoose_1.default.Schema({
     link: {
         type: String,
         required: true,
-        unique: true,
-        select: false
+        unique: true
     },
     date: {
         type: String,
         required: true
     },
-    evento: {
-        type: String,
-        required: true
-    }
 });
 exports.Foto = mongoose_1.default.model('Foto', exports.fotoSchema);

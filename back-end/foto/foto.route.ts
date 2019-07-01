@@ -11,9 +11,21 @@ class fotoRoutes extends Routes {
             })
         });
 
+        application.get('/foto/:id', (req, resp, next) => {
+            Foto.findById(req.params.id,  (error, foto) => {
+                if(error) {
+                    return resp.send(500);
+                }
+                resp.json(foto);
+                console.log(foto);    
+            })
+            return next();
+               
+        })
+
         application.post('/foto', (req, resp, next) => {
             let foto = new Foto(req.body);
-
+             
             foto.save().then(foto => {
                 resp.json(foto);
             }, error => {

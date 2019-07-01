@@ -27,6 +27,16 @@ var fotoRoutes = /** @class */ (function (_super) {
                 return next();
             });
         });
+        application.get('/foto/:id', function (req, resp, next) {
+            foto_model_1.Foto.findById(req.params.id, function (error, foto) {
+                if (error) {
+                    return resp.send(500);
+                }
+                resp.json(foto);
+                console.log(foto);
+            });
+            return next();
+        });
         application.post('/foto', function (req, resp, next) {
             var foto = new foto_model_1.Foto(req.body);
             foto.save().then(function (foto) {

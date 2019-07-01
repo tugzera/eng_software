@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 export interface Video extends mongoose.Document {
     link: String;
-    date: Date;
+    date: String;
 }
 
 export const videoSchema = new mongoose.Schema({
@@ -13,7 +13,7 @@ export const videoSchema = new mongoose.Schema({
         select: false
     },
     date: {
-        type: Date,
+        type: String,
         required: true
     }
 })

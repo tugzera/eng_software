@@ -1,13 +1,15 @@
 import mongoose, { Schema } from 'mongoose';
 
 export interface ArquivoSistema extends mongoose.Document {
+    //_id: Schema.Types.ObjectId;
     nome: String;
     date: String;
-    foto: [Schema.Types.ObjectId];
-    video: [Schema.Types.ObjectId];
+    fotos: [Schema.Types.ObjectId];
+    videos: [Schema.Types.ObjectId];
 }
 
 export const arquivoSistemaSchema = new mongoose.Schema({
+    
     nome: {
         type: String,
         required: true,
@@ -17,12 +19,12 @@ export const arquivoSistemaSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    foto: {
+    fotos: {
         type: [Schema.Types.ObjectId],
         default: undefined,
         required: false
     },
-    video: {
+    videos: {
         type: [Schema.Types.ObjectId],
         default: undefined,
         required: false

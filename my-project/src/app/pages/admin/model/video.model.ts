@@ -1,4 +1,4 @@
-export class Foto {
+export class Video {
     date: string;
     link: string;
 }

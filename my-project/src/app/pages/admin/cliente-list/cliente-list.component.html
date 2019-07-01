@@ -6,7 +6,7 @@
       </div>
     </div>
     <span class="float-right">
-      <button class="btn btn-success mb-1 btn-sm">
+      <button class="btn btn-success mb-1 btn-sm" [routerLink]="['/admin/cliente/cadastro']">
         <i class="fas fa-plus-square fa-2x"></i>
       </button>
     </span>
@@ -26,11 +26,11 @@
           <td> {{ cliente.nome }}</td>
           <td>
             <span class="float-right">
-              <button class="btn btn-primary mb-1 btn-sm">Arquivos</button>&nbsp;
-              <button class="btn btn-secondary mb-1 btn-sm">
+              <button class="btn btn-primary mb-1 btn-sm" >Arquivos</button>&nbsp;
+              <button class="btn btn-secondary mb-1 btn-sm" (click)="getIDCookie(cliente._id)">
                 Editar
               </button>&nbsp;
-              <button class="btn btn-danger mb-1 btn-sm">
+              <button class="btn btn-danger mb-1 btn-sm" (click)="del(cliente._id)">
                 Excluir
               </button>
             </span>

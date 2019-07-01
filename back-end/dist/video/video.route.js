@@ -27,6 +27,16 @@ var videoRoutes = /** @class */ (function (_super) {
                 return next();
             });
         });
+        application.get('/video/:id', function (req, resp, next) {
+            video_model_1.Video.findById(req.params.id, function (error, foto) {
+                if (error) {
+                    return resp.send(500);
+                }
+                resp.json(foto);
+                console.log(foto);
+            });
+            return next();
+        });
         application.post('/video', function (req, resp, next) {
             var video = new video_model_1.Video(req.body);
             video.save().then(function (video) {

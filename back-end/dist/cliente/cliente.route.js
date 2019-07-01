@@ -28,16 +28,27 @@ var clienteRoutes = /** @class */ (function (_super) {
                 return next();
             });
         });
+        application.get('/cliente/:id', function (req, resp, next) {
+            cliente_model_1.Cliente.findById(req.params.id, function (error, cliente) {
+                if (error) {
+                    return resp.send(500);
+                }
+                resp.json(cliente);
+                console.log(cliente);
+            });
+            return next();
+        });
         application.post('/cliente', function (req, resp, next) {
             var cliente = new cliente_model_1.Cliente(req.body);
             var myHash = md5_1.Md5.hashStr(cliente.password);
+            //console.log("aq");
             cliente.password = myHash;
             cliente.save().then(function (cliente) {
                 resp.json(cliente);
+                return next();
             }, function (error) {
                 console.log(error);
             });
-            return next();
         });
         application.del('/cliente/:id', function (req, resp, next) {
             cliente_model_1.Cliente.remove({ _id: req.params.id }).exec().then(function (result) {

@@ -28,8 +28,16 @@ export class FilesComponent implements OnInit {
     //this.cookieValue = this.cookieID.get('ID');
   }
 
-  getIDCookie(id: string) {
+  getIDCookie(id) {
     this.cookieID.set('ID', id);
+    let arq: ArquivoSistema = new ArquivoSistema();
+    // this.service.listAlbumbyID(id).subscribe(dado => arq = dado);
+    this.router.navigate(["admin/files/", id]).then(e => {
+
+      if (e) { }
+
+    })
+
   }
 
 }

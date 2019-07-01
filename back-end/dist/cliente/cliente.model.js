@@ -1,13 +1,9 @@
 "use strict";
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var mongoose_1 = __importStar(require("mongoose"));
+var mongoose_1 = __importDefault(require("mongoose"));
 var clienteSchema = new mongoose_1.default.Schema({
     nome: {
         type: String,
@@ -32,14 +28,37 @@ var clienteSchema = new mongoose_1.default.Schema({
         type: String,
         required: false
     },
-    end: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        required: false
-    },
     status: {
         type: String,
         required: true,
         select: true
+    },
+    rua: {
+        type: String,
+        required: true
+    },
+    cep: {
+        type: String,
+        required: true
+    },
+    numero: {
+        type: Number,
+        required: true
+    },
+    bairro: {
+        type: String,
+        required: true
+    },
+    uf: {
+        type: String,
+        required: true
+    },
+    cidade: {
+        type: String,
+        required: true
+    },
+    complemento: {
+        type: String
     }
 });
 exports.Cliente = mongoose_1.default.model('Cliente', clienteSchema);

@@ -23,7 +23,7 @@ class loginRoutes extends Routes {
             let user = new Cliente(req.body);
             let myHash1 = <String>Md5.hashStr(<string>user.password);
             user.password = myHash1;
-            console.log(user);
+            //console.log(user);
             Cliente.findOne({ $and: [{ "email": user.email }, { "password": user.password }] }).
                 then(user => {
                     if (user != null) {
