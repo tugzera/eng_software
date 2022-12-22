@@ -7,7 +7,7 @@
     "@types/mongoose": "^5.3.24",
     "@types/restify-cors-middleware": "^1.0.1",
     "bcrypt": "^3.0.6",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^5.4.22",
     "nodemon": "^1.18.10",
     "restify": "^8.2.0",
